@@ -4,10 +4,6 @@ import { WASMContext } from "../context/WASM";
 export const WASMExample = () => {
   const ctx = useContext(WASMContext);
 
-  if (!ctx.wasm) {
-    return <>...</>;
-  }
-
   const [num1, setNum1] = useState(0);
   const [num2, setNum2] = useState(0);
   const [result, setResult] = useState<number | undefined>(0);
@@ -15,6 +11,10 @@ export const WASMExample = () => {
   const addNums = () => {
     setResult(ctx.wasm?.add(num1, num2));
   };
+
+  if (!ctx.wasm) {
+    return <>...</>;
+  }
 
   // return <>Computed from WASM: 4+3={ctx.wasm.add(4,3)}</>
   return (
