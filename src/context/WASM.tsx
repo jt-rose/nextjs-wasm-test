@@ -26,7 +26,7 @@ export const WASMContextProvider: React.FC<WASMContextProviderProps> = ({
 };
 
 interface IWASMContext {
-  wasm?: typeof import("wasm");
+  wasm?: typeof import("../pkg/wasm");
 }
 
 interface WASMContextProviderProps {
